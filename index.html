@@ -1,16 +1,24 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aditya - Modern Website</title>
+
+    <title>Aditya Vishwakarma | Portfolio</title>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -19,7 +27,8 @@
             line-height: 1.6;
         }
 
-        /* NAVBAR */
+        /* ================= NAVBAR ================= */
+
         header {
             background: #ffffff;
             box-shadow: 0 3px 15px rgba(0,0,0,0.08);
@@ -30,16 +39,17 @@
 
         nav {
             max-width: 1200px;
-            margin: auto;
             height: 70px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            margin: auto;
             padding: 0 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
         .logo {
-            font-size: 25px;
+            font-size: 26px;
             font-weight: bold;
             color: #5b4df5;
         }
@@ -51,7 +61,8 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 30px;
+            gap: 28px;
+            align-items: center;
         }
 
         nav ul li a {
@@ -72,29 +83,37 @@
             border-radius: 25px;
         }
 
-        /* HERO */
+        /* ================= HERO ================= */
+
         .hero {
             min-height: 620px;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             text-align: center;
             padding: 60px 20px;
 
             background:
-                radial-gradient(circle at top left, #dcd8ff, transparent 35%),
-                radial-gradient(circle at bottom right, #ffd9e2, transparent 35%),
+                radial-gradient(circle at top left,
+                #dcd8ff,
+                transparent 35%),
+
+                radial-gradient(circle at bottom right,
+                #ffd9e2,
+                transparent 35%),
+
                 #f5f7ff;
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 850px;
         }
 
         .hero h1 {
             font-size: 58px;
             margin-bottom: 20px;
-            color: #222;
         }
 
         .hero h1 span {
@@ -115,12 +134,14 @@
         }
 
         .btn {
-            text-decoration: none;
+            display: inline-block;
             padding: 14px 28px;
             border-radius: 30px;
+            text-decoration: none;
             font-weight: bold;
             transition: 0.3s;
-            display: inline-block;
+            border: none;
+            cursor: pointer;
         }
 
         .primary {
@@ -144,7 +165,8 @@
             color: white;
         }
 
-        /* SERVICES */
+        /* ================= SECTION ================= */
+
         .section {
             max-width: 1200px;
             margin: auto;
@@ -165,6 +187,8 @@
             color: #777;
         }
 
+        /* ================= CARDS ================= */
+
         .cards {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -176,24 +200,33 @@
             padding: 35px 25px;
             border-radius: 20px;
             text-align: center;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+
+            box-shadow:
+                0 8px 25px rgba(0,0,0,0.07);
+
             transition: 0.3s;
         }
 
         .card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+
+            box-shadow:
+                0 15px 35px rgba(0,0,0,0.12);
         }
 
         .icon {
             width: 70px;
             height: 70px;
+
             margin: auto;
             margin-bottom: 20px;
+
             border-radius: 50%;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             font-size: 32px;
             background: #eeeaff;
         }
@@ -207,7 +240,8 @@
             color: #777;
         }
 
-        /* ABOUT */
+        /* ================= ABOUT ================= */
+
         .about {
             background: #17172b;
             color: white;
@@ -229,24 +263,37 @@
             font-size: 17px;
         }
 
-        /* CONTACT */
+        /* ================= CONTACT ================= */
+
         .contact-box {
             max-width: 700px;
             margin: auto;
+
             background: white;
+
             padding: 40px;
+
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,0.08);
         }
 
         input,
         textarea {
+
             width: 100%;
+
             padding: 14px;
+
             margin-bottom: 15px;
+
             border: 1px solid #ddd;
+
             border-radius: 10px;
+
             outline: none;
+
             font-size: 15px;
         }
 
@@ -262,12 +309,49 @@
 
         .submit {
             width: 100%;
-            border: none;
-            cursor: pointer;
             font-size: 16px;
         }
 
-        /* FOOTER */
+        /* ================= WHATSAPP BUTTON ================= */
+
+        .whatsapp {
+
+            position: fixed;
+
+            right: 25px;
+            bottom: 25px;
+
+            width: 60px;
+            height: 60px;
+
+            background: #25D366;
+
+            color: white;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 30px;
+
+            text-decoration: none;
+
+            box-shadow:
+                0 8px 20px rgba(0,0,0,0.2);
+
+            z-index: 999;
+
+            transition: 0.3s;
+        }
+
+        .whatsapp:hover {
+            transform: scale(1.1);
+        }
+
+        /* ================= FOOTER ================= */
+
         footer {
             background: #10101d;
             color: white;
@@ -279,7 +363,8 @@
             color: #aaa;
         }
 
-        /* MOBILE */
+        /* ================= MOBILE ================= */
+
         @media (max-width: 768px) {
 
             nav ul {
@@ -301,31 +386,63 @@
             .section-title h2 {
                 font-size: 30px;
             }
+
+            .contact-box {
+                padding: 25px;
+            }
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- NAVBAR -->
+
+    <!-- ================= NAVBAR ================= -->
+
     <header>
+
         <nav>
+
             <div class="logo">
                 Aditya<span>.</span>
             </div>
 
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#contact" class="nav-btn">Get Started</a></li>
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#services">Services</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
+                <li>
+                    <a href="#contact" class="nav-btn">
+                        Get Started
+                    </a>
+                </li>
+
             </ul>
+
         </nav>
+
     </header>
 
 
-    <!-- HERO -->
+    <!-- ================= HERO ================= -->
+
     <section class="hero" id="home">
 
         <div class="hero-content">
@@ -336,19 +453,23 @@
             </h1>
 
             <p>
-                Welcome to my modern website. 
-                Explore creative ideas, technology,
-                services and innovative solutions.
+                Welcome to my modern website.
+                Explore technology, web development,
+                Artificial Intelligence and creative ideas.
             </p>
 
             <div class="buttons">
-                <a href="#services" class="btn primary">
+
+                <a href="#services"
+                   class="btn primary">
                     Explore Now →
                 </a>
 
-                <a href="#contact" class="btn secondary">
+                <a href="#contact"
+                   class="btn secondary">
                     Contact Me
                 </a>
+
             </div>
 
         </div>
@@ -356,56 +477,98 @@
     </section>
 
 
-    <!-- SERVICES -->
+    <!-- ================= SERVICES ================= -->
+
     <section class="section" id="services">
 
         <div class="section-title">
-            <h2>My Services</h2>
-            <p>Creative and professional solutions for your needs.</p>
+
+            <h2>
+                My Services
+            </h2>
+
+            <p>
+                Creative and professional solutions
+                for your needs.
+            </p>
+
         </div>
+
 
         <div class="cards">
 
-            <div class="card">
-                <div class="icon">💻</div>
-                <h3>Web Development</h3>
-                <p>
-                    Modern, responsive and user-friendly
-                    websites using latest technologies.
-                </p>
-            </div>
 
             <div class="card">
-                <div class="icon">🎨</div>
-                <h3>Graphic Design</h3>
+
+                <div class="icon">
+                    💻
+                </div>
+
+                <h3>
+                    Web Development
+                </h3>
+
                 <p>
-                    Attractive designs, posters,
-                    banners and creative graphics.
+                    Modern, responsive and
+                    user-friendly websites using
+                    modern technologies.
                 </p>
+
             </div>
 
+
             <div class="card">
-                <div class="icon">🤖</div>
-                <h3>AI Technology</h3>
+
+                <div class="icon">
+                    🎨
+                </div>
+
+                <h3>
+                    Graphic Design
+                </h3>
+
                 <p>
-                    Explore modern Artificial Intelligence
+                    Attractive posters, banners,
+                    graphics and creative designs.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🤖
+                </div>
+
+                <h3>
+                    AI Technology
+                </h3>
+
+                <p>
+                    Explore Artificial Intelligence
                     and smart technology solutions.
                 </p>
+
             </div>
+
 
         </div>
 
     </section>
 
 
-    <!-- ABOUT -->
+    <!-- ================= ABOUT ================= -->
+
     <section class="about" id="about">
 
         <div class="section">
 
             <div class="about-content">
 
-                <h2>About Me</h2>
+                <h2>
+                    About Me
+                </h2>
 
                 <p>
                     Hello! I'm Aditya Vishwakarma.
@@ -421,31 +584,46 @@
     </section>
 
 
-    <!-- CONTACT -->
+    <!-- ================= CONTACT ================= -->
+
     <section class="section" id="contact">
 
         <div class="section-title">
-            <h2>Contact Me</h2>
-            <p>Have a project or idea? Let's connect.</p>
+
+            <h2>
+                Contact Me
+            </h2>
+
+            <p>
+                Have a project or idea?
+                Let's connect.
+            </p>
+
         </div>
+
 
         <div class="contact-box">
 
-            <form>
+            <!-- WhatsApp Form -->
+
+            <form onsubmit="sendWhatsApp(); return false;">
 
                 <input
                     type="text"
+                    id="name"
                     placeholder="Your Name"
                     required
                 >
 
                 <input
                     type="email"
+                    id="email"
                     placeholder="Your Email"
                     required
                 >
 
                 <textarea
+                    id="message"
                     placeholder="Write your message..."
                     required
                 ></textarea>
@@ -453,7 +631,9 @@
                 <button
                     type="submit"
                     class="btn primary submit">
-                    Send Message
+
+                    Send Message on WhatsApp
+
                 </button>
 
             </form>
@@ -463,14 +643,96 @@
     </section>
 
 
-    <!-- FOOTER -->
+    <!-- ================= FOOTER ================= -->
+
     <footer>
 
         <p>
-            © 2026 Aditya Vishwakarma. All Rights Reserved.
+            © 2026 Aditya Vishwakarma.
+            All Rights Reserved.
+        </p>
+
+        <p>
+            WhatsApp: +91 8471072012
         </p>
 
     </footer>
 
+
+    <!-- ================= FLOATING WHATSAPP ================= -->
+
+    <a
+        href="https://wa.me/918471072012"
+        target="_blank"
+        class="whatsapp"
+        title="Chat on WhatsApp">
+
+        💬
+
+    </a>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        function sendWhatsApp() {
+
+            // आपका WhatsApp नंबर
+            const phone = "918471072012";
+
+
+            // Form से जानकारी लेना
+            const name =
+                document.getElementById("name").value;
+
+            const email =
+                document.getElementById("email").value;
+
+            const message =
+                document.getElementById("message").value;
+
+
+            // WhatsApp Message
+            const text =
+                "Hello Aditya,%0A%0A" +
+
+                "New Contact Form Message%0A%0A" +
+
+                "Name: " +
+                encodeURIComponent(name) +
+
+                "%0A" +
+
+                "Email: " +
+                encodeURIComponent(email) +
+
+                "%0A" +
+
+                "Message: " +
+                encodeURIComponent(message);
+
+
+            // WhatsApp URL
+            const whatsappURL =
+                "https://wa.me/" +
+                phone +
+                "?text=" +
+                text;
+
+
+            // WhatsApp खोलना
+            window.open(
+                whatsappURL,
+                "_blank"
+            );
+
+        }
+
+    </script>
+
+
 </body>
+
 </html>
+```
