@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya - Modern Website</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f7ff;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        header {
+            background: #ffffff;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #5b4df5;
+        }
+
+        .logo span {
+            color: #ff4d6d;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #5b4df5;
+        }
+
+        .nav-btn {
+            background: #5b4df5;
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 25px;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 620px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+
+            background:
+                radial-gradient(circle at top left, #dcd8ff, transparent 35%),
+                radial-gradient(circle at bottom right, #ffd9e2, transparent 35%),
+                #f5f7ff;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        .hero h1 span {
+            color: #5b4df5;
+        }
+
+        .hero p {
+            font-size: 19px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .primary {
+            background: #5b4df5;
+            color: white;
+            box-shadow: 0 8px 20px rgba(91,77,245,0.3);
+        }
+
+        .primary:hover {
+            transform: translateY(-3px);
+            background: #4739dc;
+        }
+
+        .secondary {
+            border: 2px solid #5b4df5;
+            color: #5b4df5;
+        }
+
+        .secondary:hover {
+            background: #5b4df5;
+            color: white;
+        }
+
+        /* SERVICES */
+        .section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #777;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+
+        .icon {
+            width: 70px;
+            height: 70px;
+            margin: auto;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            background: #eeeaff;
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+            font-size: 22px;
+        }
+
+        .card p {
+            color: #777;
+        }
+
+        /* ABOUT */
+        .about {
+            background: #17172b;
+            color: white;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            color: #c9c9d5;
+            font-size: 17px;
+        }
+
+        /* CONTACT */
+        .contact-box {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            outline: none;
+            font-size: 15px;
+        }
+
+        textarea {
+            height: 130px;
+            resize: none;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #5b4df5;
+        }
+
+        .submit {
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #10101d;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        footer p {
+            color: #aaa;
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+
+            nav ul {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav>
+            <div class="logo">
+                Aditya<span>.</span>
+            </div>
+
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact" class="nav-btn">Get Started</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>
+                Build Something
+                <span>Amazing.</span>
+            </h1>
+
+            <p>
+                Welcome to my modern website. 
+                Explore creative ideas, technology,
+                services and innovative solutions.
+            </p>
+
+            <div class="buttons">
+                <a href="#services" class="btn primary">
+                    Explore Now →
+                </a>
+
+                <a href="#contact" class="btn secondary">
+                    Contact Me
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+
+        <div class="section-title">
+            <h2>My Services</h2>
+            <p>Creative and professional solutions for your needs.</p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="icon">💻</div>
+                <h3>Web Development</h3>
+                <p>
+                    Modern, responsive and user-friendly
+                    websites using latest technologies.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🎨</div>
+                <h3>Graphic Design</h3>
+                <p>
+                    Attractive designs, posters,
+                    banners and creative graphics.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🤖</div>
+                <h3>AI Technology</h3>
+                <p>
+                    Explore modern Artificial Intelligence
+                    and smart technology solutions.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+
+        <div class="section">
+
+            <div class="about-content">
+
+                <h2>About Me</h2>
+
+                <p>
+                    Hello! I'm Aditya Vishwakarma.
+                    I am an MCA student interested in
+                    technology, web development and
+                    Artificial Intelligence.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+
+        <div class="section-title">
+            <h2>Contact Me</h2>
+            <p>Have a project or idea? Let's connect.</p>
+        </div>
+
+        <div class="contact-box">
+
+            <form>
+
+                <input
+                    type="text"
+                    placeholder="Your Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    placeholder="Your Email"
+                    required
+                >
+
+                <textarea
+                    placeholder="Write your message..."
+                    required
+                ></textarea>
+
+                <button
+                    type="submit"
+                    class="btn primary submit">
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 Aditya Vishwakarma. All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>
